@@ -27,7 +27,16 @@ app.get("/metrics", (req, res) => {
     });
 });
 
-
+app.get("/", (req, res) => {
+    let arr = [];
+    for (let i = 0; i < 1e6; i++) {
+        arr.push(i);
+    }
+    for (let i = 0; i < 100; i++) {
+        arr[i] = arr[i] + 2;
+    }
+  res.send("Hello from Render! 🚀 Your server is running."+arr[0]);
+});
 
 // Render 会提供 PORT 环境变量
 const PORT = process.env.PORT || 3000;
