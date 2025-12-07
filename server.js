@@ -32,10 +32,12 @@ app.get("/", (req, res) => {
     for (let i = 0; i < 1e6; i++) {
         arr.push(i);
     }
-    for (let i = 0; i < 100; i++) {
-        arr[i] = arr[i] + 2;
+    for(let j = 0; j < 100; j++){
+        for (let i = 0; i < 1e6; i++) {
+            arr[i] = arr[i] + 2;
+        }
     }
-  res.send("Hello from Render! 🚀 Your server is running."+arr[0]);
+    res.send("Hello from Render! 🚀 Your server is running."+arr[0]);
 });
 
 // Render 会提供 PORT 环境变量
